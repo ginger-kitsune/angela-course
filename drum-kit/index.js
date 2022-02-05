@@ -41,13 +41,23 @@ function playSound (key) {
             console.log(key);
     }
 }
+
+function buttonAnimation(key) {
+    document.querySelector("." + key).classList.add('pressed');
+    setTimeout(function() {
+        document.querySelector("." + key).classList.remove('pressed');
+    }, 100);
+}
+
 btns.forEach((btn) => {
     btn.addEventListener("click", function () {
         playSound(btn.innerHTML);
+        buttonAnimation(btn.innerHTML);
     });
 });
 
 document.addEventListener('keydown', function(event) {
     playSound(event.key);
+    buttonAnimation(event.key);
 });
 
