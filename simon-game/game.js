@@ -5,7 +5,7 @@ let buttonColours = ["red", "blue", "green", "yellow"],
 let started = false,
     level = 0;
 
-$(document).on('tap keydown', function() {
+$(document).on('touchstart keydown', function() {
     if(!started) {
         $('#level-title').text("Level " + level);
         nextSequence();
