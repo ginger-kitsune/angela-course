@@ -5,14 +5,7 @@ let buttonColours = ["red", "blue", "green", "yellow"],
 let started = false,
     level = 0;
 
-$(document).keypress(function() {
-    if(!started) {
-        $('#level-title').text("Level " + level);
-        nextSequence();
-        started = true;
-    }
-});
-$(document).on('click', function() {
+$(document).on('tap keydown', function() {
     if(!started) {
         $('#level-title').text("Level " + level);
         nextSequence();
@@ -44,7 +37,7 @@ function checkAnswer(currentLevel) {
         setTimeout(function () {
             $('body').removeClass('game-over');
         }, 200);
-        $('#level-title').text("Game Over, Press Any Key or click to Restart");
+        $('#level-title').text("Game Over, Press Any Key or tap to Restart");
         startOver();
     }
 }
