@@ -12,6 +12,13 @@ $(document).keypress(function() {
         started = true;
     }
 });
+$(document).on('click', function() {
+    if(!started) {
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+});
 
 $('.btn').on('click', function(){
     let userChosenColour = $(this).attr('id');
